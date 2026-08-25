@@ -264,6 +264,8 @@ const revealObserver =
 
 revealElements.forEach((element) => {
 
+    element.classList.add("reveal-ready");
+
     revealObserver.observe(element);
 
 });
