@@ -1511,7 +1511,7 @@ ul {
     display: grid;
 
     grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+        repeat(3, minmax(0, 1fr));
 
     gap: 18px;
 }
@@ -1521,7 +1521,7 @@ ul {
 
     position: relative;
 
-    min-height: 430px;
+    min-height: 450px;
 
     padding: 30px;
 
@@ -1550,16 +1550,6 @@ ul {
     border-color: var(--border-hover);
 
     box-shadow: var(--shadow);
-}
-
-
-.project-card-featured {
-
-    grid-column: 1 / -1;
-
-    min-height: 350px;
-
-    max-width: 760px;
 }
 
 
@@ -1830,6 +1820,131 @@ ul {
     font-size: 0.7rem;
 }
 
+/* =========================================================
+   POSITIONS OF RESPONSIBILITY
+========================================================= */
+
+.responsibility-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+
+.responsibility-card {
+
+    position: relative;
+
+    min-height: 230px;
+
+    padding: 27px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    background: var(--surface);
+
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        background var(--transition);
+}
+
+
+.responsibility-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: var(--border-hover);
+
+    background: var(--surface-hover);
+}
+
+
+.responsibility-top {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 42px;
+}
+
+
+.responsibility-index {
+
+    color: var(--primary);
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+}
+
+
+.responsibility-date {
+
+    padding: 6px 9px;
+
+    border-radius: 8px;
+
+    background: var(--bg-secondary);
+
+    color: var(--text-soft);
+
+    font-size: 0.66rem;
+}
+
+
+.responsibility-org {
+
+    margin-bottom: 7px;
+
+    color: var(--primary);
+
+    font-size: 0.7rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.1em;
+}
+
+
+.responsibility-card h3 {
+
+    margin-bottom: 7px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 1.25rem;
+
+    line-height: 1.35;
+
+    letter-spacing: -0.025em;
+}
+
+
+.responsibility-place {
+
+    margin-top: auto;
+
+    padding-top: 20px;
+
+    color: var(--text-secondary);
+
+    font-size: 0.8rem;
+}
 
 /* =========================================================
    ACHIEVEMENTS
@@ -2369,11 +2484,13 @@ a.achievement-card:hover {
     }
 
 
+    .projects-grid,
     .skills-grid,
+    .responsibility-grid,
     .achievement-grid {
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+   
+       grid-template-columns:
+           repeat(2, minmax(0, 1fr));
     }
 
 
@@ -2671,11 +2788,6 @@ a.achievement-card:hover {
     }
 
 
-    .project-card-featured {
-        grid-column: auto;
-    }
-
-
     .project-card {
         min-height: 390px;
     }
@@ -2687,9 +2799,10 @@ a.achievement-card:hover {
 
 
     .skills-grid,
+    .responsibility-grid,
     .achievement-grid {
-
-        grid-template-columns: 1fr;
+      
+          grid-template-columns: 1fr;
     }
 
 
