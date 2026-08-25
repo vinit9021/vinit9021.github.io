@@ -1,426 +1,565 @@
+"use strict";
+
+
 /* =========================================================
-   VINIT GUJRATHI PORTFOLIO
+   ELEMENTS
 ========================================================= */
+
+const html = document.documentElement;
+
+const header = document.getElementById("header");
+
+const themeToggle = document.getElementById("themeToggle");
+const themeIcon = document.getElementById("themeIcon");
+
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+const navLinks = document.querySelectorAll(".nav-link");
+
+const revealElements = document.querySelectorAll(".reveal");
+
+const sections = document.querySelectorAll("section[id]");
+
+const mouseGlow = document.getElementById("mouseGlow");
+
+const yearElement = document.getElementById("currentYear");
+
+
+/* =========================================================
+   DARK / LIGHT THEME
+
+   Default = DARK
+========================================================= */
+
+function applyTheme(theme) {
+
+    html.setAttribute("data-theme", theme);
+
+
+    if (theme === "dark") {
+
+        themeIcon.textContent = "☀";
+
+        document
+            .querySelector('meta[name="theme-color"]')
+            .setAttribute(
+                "content",
+                "#181c24"
+            );
+
+    } else {
+
+        themeIcon.textContent = "☾";
+
+        document
+            .querySelector('meta[name="theme-color"]')
+            .setAttribute(
+                "content",
+                "#edf1f6"
+            );
+
+    }
+
+}
+
+
+/*
+    Check if the visitor previously selected
+    a theme.
+
+    If no saved choice exists, DARK is used.
+*/
+
+const savedTheme =
+    localStorage.getItem("portfolio-theme");
+
+
+if (savedTheme === "light") {
+
+    applyTheme("light");
+
+} else {
+
+    applyTheme("dark");
+
+}
+
+
+/* Theme toggle */
+
+themeToggle.addEventListener("click", () => {
+
+    const currentTheme =
+        html.getAttribute("data-theme");
+
+
+    const newTheme =
+        currentTheme === "dark"
+            ? "light"
+            : "dark";
+
+
+    applyTheme(newTheme);
+
+
+    localStorage.setItem(
+        "portfolio-theme",
+        newTheme
+    );
+
+});
 
 
 /* =========================================================
    MOBILE NAVIGATION
 ========================================================= */
 
-const menuButton =
-    document.getElementById("menuButton");
+function closeMobileMenu() {
 
-const navLinks =
-    document.getElementById("navLinks");
+    navMenu.classList.remove("open");
 
+    menuToggle.classList.remove("active");
 
-if (menuButton && navLinks) {
+    document.body.classList.remove("menu-open");
 
-    menuButton.addEventListener(
-        "click",
-        () => {
-
-            navLinks.classList.toggle("active");
-
-        }
+    menuToggle.setAttribute(
+        "aria-expanded",
+        "false"
     );
-
-
-    navLinks
-        .querySelectorAll("a")
-        .forEach((link) => {
-
-            link.addEventListener(
-                "click",
-                () => {
-
-                    navLinks.classList.remove(
-                        "active"
-                    );
-
-                }
-            );
-
-        });
 
 }
 
 
-/* =========================================================
-   THEME
-========================================================= */
+menuToggle.addEventListener("click", () => {
 
-const themeButton =
-    document.getElementById("themeButton");
+    const isOpen =
+        navMenu.classList.toggle("open");
 
 
-const savedTheme =
-    localStorage.getItem(
-        "portfolio-theme"
+    menuToggle.classList.toggle(
+        "active",
+        isOpen
     );
 
 
-if (savedTheme === "light") {
-
-    document.body.classList.add(
-        "light-theme"
+    document.body.classList.toggle(
+        "menu-open",
+        isOpen
     );
 
-    if (themeButton) {
 
-        themeButton.textContent = "☾";
+    menuToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+    );
+
+});
+
+
+navLinks.forEach((link) => {
+
+    link.addEventListener(
+        "click",
+        closeMobileMenu
+    );
+
+});
+
+
+/*
+    Close menu when user clicks outside
+    of mobile navigation.
+*/
+
+document.addEventListener("click", (event) => {
+
+    const clickedInsideMenu =
+        navMenu.contains(event.target);
+
+
+    const clickedMenuButton =
+        menuToggle.contains(event.target);
+
+
+    if (
+        navMenu.classList.contains("open") &&
+        !clickedInsideMenu &&
+        !clickedMenuButton
+    ) {
+
+        closeMobileMenu();
 
     }
 
-}
-
-
-if (themeButton) {
-
-    themeButton.addEventListener(
-        "click",
-        () => {
-
-            document.body.classList.toggle(
-                "light-theme"
-            );
-
-
-            const isLight =
-                document.body.classList.contains(
-                    "light-theme"
-                );
-
-
-            localStorage.setItem(
-                "portfolio-theme",
-                isLight
-                    ? "light"
-                    : "dark"
-            );
-
-
-            themeButton.textContent =
-                isLight
-                    ? "☾"
-                    : "☼";
-
-        }
-    );
-
-}
+});
 
 
 /* =========================================================
-   ACTIVE NAVIGATION
+   HEADER STYLE ON SCROLL
 ========================================================= */
 
-const sections =
-    document.querySelectorAll(
-        "section[id]"
-    );
+function updateHeader() {
 
+    if (window.scrollY > 20) {
 
-const navigationLinks =
-    document.querySelectorAll(
-        ".nav-links a"
-    );
+        header.classList.add("scrolled");
 
+    } else {
 
-function updateNavigation() {
+        header.classList.remove("scrolled");
 
-    let currentSection = "";
-
-
-    sections.forEach(
-        (section) => {
-
-            const sectionTop =
-                section.offsetTop - 180;
-
-
-            const sectionBottom =
-                sectionTop +
-                section.offsetHeight;
-
-
-            if (
-                window.scrollY >= sectionTop &&
-                window.scrollY < sectionBottom
-            ) {
-
-                currentSection =
-                    section.id;
-
-            }
-
-        }
-    );
-
-
-    navigationLinks.forEach(
-        (link) => {
-
-            link.classList.remove(
-                "active"
-            );
-
-
-            if (
-                link.getAttribute(
-                    "href"
-                ) ===
-                `#${currentSection}`
-            ) {
-
-                link.classList.add(
-                    "active"
-                );
-
-            }
-
-        }
-    );
+    }
 
 }
 
 
 window.addEventListener(
     "scroll",
-    updateNavigation
+    updateHeader,
+    { passive: true }
 );
 
 
+updateHeader();
+
+
 /* =========================================================
-   SCROLL REVEAL
+   REVEAL ANIMATION
 ========================================================= */
-
-const revealElements =
-    document.querySelectorAll(
-        ".section-label, " +
-        ".section-title, " +
-        ".about-content, " +
-        ".experience-item, " +
-        ".projects-intro, " +
-        ".project, " +
-        ".skills-heading, " +
-        ".skill-row, " +
-        ".achievements-heading, " +
-        ".profile-row, " +
-        ".achievement-row, " +
-        ".beyond-layout, " +
-        ".contact-copy, " +
-        ".contact-form"
-    );
-
 
 const revealObserver =
     new IntersectionObserver(
+
         (entries, observer) => {
 
-            entries.forEach(
-                (entry) => {
+            entries.forEach((entry) => {
 
-                    if (
-                        entry.isIntersecting
-                    ) {
+                if (entry.isIntersecting) {
 
-                        entry.target.classList.add(
-                            "reveal",
-                            "visible"
-                        );
+                    entry.target
+                        .classList
+                        .add("visible");
 
 
-                        observer.unobserve(
-                            entry.target
-                        );
-
-                    }
+                    observer.unobserve(
+                        entry.target
+                    );
 
                 }
-            );
+
+            });
 
         },
+
         {
-            threshold: 0.08
+            threshold: 0.12,
+
+            rootMargin:
+                "0px 0px -40px 0px"
         }
+
     );
 
 
-revealElements.forEach(
-    (element) => {
+revealElements.forEach((element) => {
 
-        element.classList.add(
-            "reveal"
-        );
+    revealObserver.observe(element);
 
-        revealObserver.observe(
-            element
-        );
+});
+
+
+/* =========================================================
+   STAGGER INITIAL HERO ANIMATIONS
+========================================================= */
+
+const heroRevealElements =
+    document.querySelectorAll(
+        "#home .reveal"
+    );
+
+
+heroRevealElements.forEach(
+    (element, index) => {
+
+        element.style.transitionDelay =
+            `${index * 80}ms`;
 
     }
 );
 
 
 /* =========================================================
-   CONTACT FORM
+   ACTIVE NAV LINK WHILE SCROLLING
 ========================================================= */
 
-const contactForm =
-    document.getElementById(
-        "contactForm"
-    );
+function updateActiveNavigation() {
+
+    let currentSection = "home";
 
 
-const submitButton =
-    document.getElementById(
-        "submitButton"
-    );
+    sections.forEach((section) => {
+
+        const sectionTop =
+            section.offsetTop - 170;
 
 
-const formStatus =
-    document.getElementById(
-        "formStatus"
-    );
+        if (
+            window.scrollY >= sectionTop
+        ) {
+
+            currentSection =
+                section.getAttribute("id");
+
+        }
+
+    });
 
 
-if (contactForm) {
+    navLinks.forEach((link) => {
 
-    contactForm.addEventListener(
-        "submit",
-        async (event) => {
-
-            event.preventDefault();
+        link.classList.remove("active");
 
 
-            if (!submitButton) {
-                return;
-            }
+        const href =
+            link.getAttribute("href");
 
 
-            const originalText =
-                submitButton.innerHTML;
+        if (
+            href ===
+            `#${currentSection}`
+        ) {
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+}
 
 
-            submitButton.disabled =
-                true;
+window.addEventListener(
+    "scroll",
+    updateActiveNavigation,
+    { passive: true }
+);
 
 
-            submitButton.innerHTML =
-                "Sending...";
+updateActiveNavigation();
 
 
-            if (formStatus) {
+/* =========================================================
+   SUBTLE CURSOR GLOW
 
-                formStatus.textContent =
-                    "";
+   Only enabled on desktop devices.
+========================================================= */
 
-            }
-
-
-            const formData =
-                new FormData(
-                    contactForm
-                );
+const canUseMouseGlow =
+    window.matchMedia(
+        "(pointer: fine)"
+    ).matches;
 
 
-            try {
+if (canUseMouseGlow && mouseGlow) {
 
-                const response =
-                    await fetch(
-                        "https://formsubmit.co/ajax/vinitgujrathi87@gmail.com",
-                        {
-                            method: "POST",
+    window.addEventListener(
+        "mousemove",
+        (event) => {
 
-                            headers: {
-                                "Accept":
-                                    "application/json"
-                            },
+            mouseGlow.style.left =
+                `${event.clientX}px`;
 
-                            body: formData
-                        }
-                    );
-
-
-                if (!response.ok) {
-
-                    throw new Error(
-                        "Request failed"
-                    );
-
-                }
-
-
-                const result =
-                    await response.json();
-
-
-                if (
-                    result.success === false
-                ) {
-
-                    throw new Error(
-                        "Submission failed"
-                    );
-
-                }
-
-
-                contactForm.reset();
-
-
-                if (formStatus) {
-
-                    formStatus.textContent =
-                        "Message sent successfully.";
-
-                }
-
-
-                submitButton.innerHTML =
-                    "Message sent ✓";
-
-
-            } catch (error) {
-
-                console.error(error);
-
-
-                if (formStatus) {
-
-                    formStatus.textContent =
-                        "Couldn't send the message. Please email me directly.";
-
-                }
-
-
-                submitButton.innerHTML =
-                    originalText;
-
-            }
-
-
-            setTimeout(
-                () => {
-
-                    submitButton.disabled =
-                        false;
-
-                    submitButton.innerHTML =
-                        originalText;
-
-                },
-                4000
-            );
+            mouseGlow.style.top =
+                `${event.clientY}px`;
 
         }
     );
+
+} else if (mouseGlow) {
+
+    mouseGlow.style.display = "none";
 
 }
 
 
 /* =========================================================
-   INITIALIZE
+   PROJECT CARD POINTER EFFECT
 ========================================================= */
 
-updateNavigation();
+const cards =
+    document.querySelectorAll(
+        ".project-card, .skill-card, .achievement-card"
+    );
+
+
+if (canUseMouseGlow) {
+
+    cards.forEach((card) => {
+
+        card.addEventListener(
+            "mousemove",
+            (event) => {
+
+                const rect =
+                    card.getBoundingClientRect();
+
+
+                const x =
+                    event.clientX -
+                    rect.left;
+
+
+                const y =
+                    event.clientY -
+                    rect.top;
+
+
+                card.style.setProperty(
+                    "--mouse-x",
+                    `${x}px`
+                );
+
+
+                card.style.setProperty(
+                    "--mouse-y",
+                    `${y}px`
+                );
+
+            }
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   CURRENT YEAR
+========================================================= */
+
+if (yearElement) {
+
+    yearElement.textContent =
+        new Date().getFullYear();
+
+}
+
+
+/* =========================================================
+   SMOOTH INTERNAL LINK SCROLLING
+========================================================= */
+
+document
+    .querySelectorAll(
+        'a[href^="#"]'
+    )
+    .forEach((anchor) => {
+
+        anchor.addEventListener(
+            "click",
+            function (event) {
+
+                const targetId =
+                    this.getAttribute("href");
+
+
+                if (
+                    !targetId ||
+                    targetId === "#"
+                ) {
+                    return;
+                }
+
+
+                const target =
+                    document.querySelector(
+                        targetId
+                    );
+
+
+                if (!target) {
+                    return;
+                }
+
+
+                event.preventDefault();
+
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   BUTTON PRESS EFFECT
+========================================================= */
+
+const buttons =
+    document.querySelectorAll(".btn");
+
+
+buttons.forEach((button) => {
+
+    button.addEventListener(
+        "mousedown",
+        () => {
+
+            button.style.transform =
+                "translateY(-1px) scale(0.98)";
+
+        }
+    );
+
+
+    button.addEventListener(
+        "mouseup",
+        () => {
+
+            button.style.transform = "";
+
+        }
+    );
+
+
+    button.addEventListener(
+        "mouseleave",
+        () => {
+
+            button.style.transform = "";
+
+        }
+    );
+
+});
+
+
+/* =========================================================
+   REMOVE HERO ANIMATION DELAYS AFTER LOAD
+
+   This prevents the delays from affecting elements
+   if they re-render.
+========================================================= */
+
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+        heroRevealElements.forEach(
+            (element) => {
+
+                element.style.transitionDelay =
+                    "0ms";
+
+            }
+        );
+
+    }, 1200);
+
+});
