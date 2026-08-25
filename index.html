@@ -1,219 +1,256 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="dark">
 <head>
-
     <meta charset="UTF-8">
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0">
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
-        content="Vinit Gujrathi — Software Developer focused on backend engineering, Agentic AI and intelligent applications.">
+        content="Portfolio of Vinit Gujrathi - Developer, AI enthusiast and IIT Ropar undergraduate."
+    >
 
     <meta
-        name="author"
-        content="Vinit Gujrathi">
+        name="keywords"
+        content="Vinit Gujrathi, Portfolio, Software Developer, AI Engineer, Data Analyst, IIT Ropar"
+    >
 
-    <title>Vinit Gujrathi — Software Developer</title>
+    <meta name="author" content="Vinit Gujrathi">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="theme-color" content="#171a21">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <title>Vinit Gujrathi | Portfolio</title>
 
     <link rel="stylesheet" href="style.css">
-
 </head>
-
 
 <body>
 
-    <!-- =====================================================
-         NAVIGATION
-    ====================================================== -->
+    <!-- ==================================================
+         BACKGROUND DECORATION
+    =================================================== -->
 
-    <header class="navbar">
+    <div class="background-grid"></div>
+    <div class="background-orb orb-one"></div>
+    <div class="background-orb orb-two"></div>
 
-        <div class="nav-inner">
+    <div class="mouse-glow" id="mouseGlow"></div>
 
-            <a href="#home" class="brand">
-                Vinit<span>.</span>
+
+    <!-- ==================================================
+         NAVBAR
+    =================================================== -->
+
+    <header class="header" id="header">
+
+        <nav class="navbar container">
+
+            <a href="#home" class="logo" aria-label="Home">
+                VG<span>.</span>
             </a>
 
 
-            <nav class="nav-links" id="navLinks">
+            <div class="nav-menu" id="navMenu">
 
-                <a href="#about">About</a>
+                <a href="#home" class="nav-link active">
+                    Home
+                </a>
 
-                <a href="#experience">Experience</a>
+                <a href="#about" class="nav-link">
+                    About
+                </a>
 
-                <a href="#projects">Projects</a>
+                <a href="#experience" class="nav-link">
+                    Experience
+                </a>
 
-                <a href="#skills">Skills</a>
+                <a href="#projects" class="nav-link">
+                    Projects
+                </a>
 
-                <a href="#achievements">Achievements</a>
+                <a href="#skills" class="nav-link">
+                    Skills
+                </a>
 
-                <a href="#contact">Contact</a>
+                <a href="#achievements" class="nav-link">
+                    Achievements
+                </a>
 
-            </nav>
+                <a href="#contact" class="nav-link">
+                    Contact
+                </a>
+
+            </div>
 
 
             <div class="nav-actions">
 
                 <button
                     class="theme-toggle"
-                    id="themeButton"
-                    aria-label="Toggle theme">
-                    ☼
+                    id="themeToggle"
+                    aria-label="Toggle light and dark mode"
+                >
+                    <span id="themeIcon">☀</span>
                 </button>
 
 
-                <a
-                    href="assets/resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="resume-link">
-
-                    Resume
-
-                </a>
-
-
                 <button
-                    class="mobile-menu"
-                    id="menuButton"
-                    aria-label="Open navigation">
-
+                    class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                >
                     <span></span>
                     <span></span>
                     <span></span>
-
                 </button>
 
             </div>
 
-        </div>
+        </nav>
 
     </header>
 
 
 
+    <!-- ==================================================
+         MAIN CONTENT
+    =================================================== -->
+
     <main>
 
 
-        <!-- =====================================================
+        <!-- ==================================================
              HERO
-        ====================================================== -->
+        =================================================== -->
 
-        <section class="hero" id="home">
+        <section class="hero section" id="home">
 
-            <div class="hero-inner">
+            <div class="container hero-container">
 
-                <div class="hero-copy">
+                <div class="hero-content">
 
-                    <div class="availability">
-                        <span></span>
-                        Open to opportunities
+                    <div class="hero-badge reveal">
+                        <span class="status-dot"></span>
+                        Open to opportunities & collaborations
                     </div>
 
 
-                    <h1>
-                        Building software
-                        <br>
-                        that <em>solves problems.</em>
-                    </h1>
-
-
-                    <p class="hero-description">
-
-                        I'm <strong>Vinit Gujrathi</strong>, a software
-                        developer focused on backend engineering,
-                        Agentic AI and intelligent applications.
-
+                    <p class="hero-intro reveal">
+                        Hi, I'm
                     </p>
 
 
-                    <div class="hero-actions">
+                    <h1 class="hero-title reveal">
+                        Vinit
+                        <span>Gujrathi.</span>
+                    </h1>
 
-                        <a
-                            href="#projects"
-                            class="btn btn-primary">
 
-                            Explore my work
-                            <span>↓</span>
+                    <div class="hero-role reveal">
+                        <span class="role-line"></span>
 
+                        <span>
+                            Software • AI • Data
+                        </span>
+                    </div>
+
+
+                    <p class="hero-description reveal">
+                        I build intelligent software systems that combine
+                        engineering, data, and AI to solve meaningful problems.
+                        I'm currently pursuing my B.Tech at IIT Ropar while
+                        exploring software engineering, agentic AI, analytics,
+                        and problem solving.
+                    </p>
+
+
+                    <div class="hero-buttons reveal">
+
+                        <a href="#projects" class="btn btn-primary">
+                            View My Work
+
+                            <span class="btn-arrow">
+                                →
+                            </span>
                         </a>
 
 
                         <a
                             href="assets/resume.pdf"
+                            class="btn btn-secondary"
                             target="_blank"
                             rel="noopener noreferrer"
-                            class="btn btn-secondary">
-
+                        >
                             View Resume
-                            <span>↗</span>
 
+                            <span class="download-symbol">
+                                ↗
+                            </span>
                         </a>
 
                     </div>
 
 
-                    <div class="hero-links">
+                    <!-- SOCIAL LINKS -->
 
-                        <a
-                            href="https://github.com/vinit9021"
-                            target="_blank"
-                            rel="noopener noreferrer">
-
-                            GitHub
-
-                        </a>
-
+                    <div class="social-links reveal">
 
                         <a
                             href="https://www.linkedin.com/in/vinit-gujrathi-7b4a54285/"
                             target="_blank"
-                            rel="noopener noreferrer">
-
+                            rel="noopener noreferrer"
+                            class="social-link"
+                        >
+                            <span class="social-icon">in</span>
                             LinkedIn
+                        </a>
 
+
+                        <a
+                            href="https://github.com/vinit9021"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-link"
+                        >
+                            <span class="social-icon">GH</span>
+                            GitHub
                         </a>
 
 
                         <a
                             href="https://leetcode.com/vinit_iitrpr"
                             target="_blank"
-                            rel="noopener noreferrer">
-
+                            rel="noopener noreferrer"
+                            class="social-link"
+                        >
+                            <span class="social-icon">LC</span>
                             LeetCode
-
                         </a>
 
 
                         <a
                             href="https://codeforces.com/profile/vinit_iitrpr"
                             target="_blank"
-                            rel="noopener noreferrer">
-
+                            rel="noopener noreferrer"
+                            class="social-link"
+                        >
+                            <span class="social-icon">CF</span>
                             Codeforces
-
                         </a>
 
 
                         <a
                             href="https://www.codechef.com/users/vinit_iitrpr"
                             target="_blank"
-                            rel="noopener noreferrer">
-
+                            rel="noopener noreferrer"
+                            class="social-link"
+                        >
+                            <span class="social-icon">CC</span>
                             CodeChef
-
                         </a>
 
                     </div>
@@ -221,294 +258,353 @@
                 </div>
 
 
-                <div class="hero-side">
 
-                    <div class="hero-card">
+                <!-- HERO VISUAL -->
 
-                        <span class="card-label">
-                            CURRENT FOCUS
-                        </span>
+                <div class="hero-visual reveal">
 
-                        <h2>
-                            Backend systems
-                            <br>
-                            + Agentic AI
-                        </h2>
+                    <div class="terminal-card">
 
-                        <p>
-                            Designing reliable APIs, data workflows
-                            and AI-powered systems that turn complex
-                            problems into useful products.
-                        </p>
+                        <div class="terminal-header">
 
-                    </div>
-
-
-                    <div class="hero-education">
-
-                        <span class="card-label">
-                            EDUCATION
-                        </span>
-
-                        <strong>
-                            IIT Ropar
-                        </strong>
-
-                        <span>
-                            B.Tech · Chemical Engineering
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="hero-bottom">
-
-                <span>
-                    01 — INTRODUCTION
-                </span>
-
-                <span>
-                    Scroll to explore ↓
-                </span>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             ABOUT
-        ====================================================== -->
-
-        <section class="section" id="about">
-
-            <div class="section-inner">
-
-                <div class="section-label">
-                    <span>01</span>
-                    ABOUT
-                </div>
-
-
-                <div class="about-layout">
-
-                    <div class="section-title">
-
-                        <h2>
-                            A developer who likes
-                            <span>understanding the problem first.</span>
-                        </h2>
-
-                    </div>
-
-
-                    <div class="about-content">
-
-                        <p class="large-text">
-
-                            I enjoy building software where engineering
-                            meets real-world problems — from backend
-                            systems and data workflows to applications
-                            powered by modern AI.
-
-                        </p>
-
-
-                        <p>
-
-                            My work currently revolves around backend
-                            engineering, Agentic AI, LLM applications
-                            and data-driven systems. I like taking an
-                            idea from a vague problem statement to a
-                            working, testable product.
-
-                        </p>
-
-
-                        <p>
-
-                            I'm pursuing a Bachelor of Technology in
-                            Chemical Engineering at the Indian Institute
-                            of Technology, Ropar.
-
-                        </p>
-
-
-                        <div class="education-row">
-
-                            <div>
-
-                                <span class="mini-label">
-                                    DEGREE
-                                </span>
-
-                                <strong>
-                                    B.Tech — Chemical Engineering
-                                </strong>
-
+                            <div class="terminal-controls">
+                                <span></span>
+                                <span></span>
+                                <span></span>
                             </div>
 
+                            <span class="terminal-title">
+                                vinit.js
+                            </span>
 
-                            <div>
+                        </div>
 
-                                <span class="mini-label">
-                                    PERIOD
+
+                        <div class="terminal-body">
+
+                            <p>
+                                <span class="code-purple">const</span>
+                                <span class="code-blue">developer</span>
+                                =
+                                <span class="code-yellow">{</span>
+                            </p>
+
+                            <p class="code-indent">
+                                name:
+                                <span class="code-green">
+                                    "Vinit Gujrathi"
+                                </span>,
+                            </p>
+
+                            <p class="code-indent">
+                                institute:
+                                <span class="code-green">
+                                    "IIT Ropar"
+                                </span>,
+                            </p>
+
+                            <p class="code-indent">
+                                interests:
+                                <span class="code-yellow">[</span>
+                            </p>
+
+                            <p class="code-indent-double">
+                                <span class="code-green">
+                                    "Software"
+                                </span>,
+                            </p>
+
+                            <p class="code-indent-double">
+                                <span class="code-green">
+                                    "Agentic AI"
+                                </span>,
+                            </p>
+
+                            <p class="code-indent-double">
+                                <span class="code-green">
+                                    "Data"
+                                </span>,
+                            </p>
+
+                            <p class="code-indent-double">
+                                <span class="code-green">
+                                    "Problem Solving"
+                                </span>
+                            </p>
+
+                            <p class="code-indent">
+                                <span class="code-yellow">]</span>,
+                            </p>
+
+                            <p class="code-indent">
+                                currentlyBuilding:
+                                <span class="code-green">
+                                    "Intelligent Systems"
+                                </span>
+                            </p>
+
+                            <p>
+                                <span class="code-yellow">}</span>;
+                            </p>
+
+
+                            <p class="terminal-command">
+                                <span>➜</span>
+                                <span class="terminal-path">
+                                    portfolio
                                 </span>
 
-                                <strong>
-                                    2023 — 2027
-                                </strong>
-
-                            </div>
-
-
-                            <div>
-
-                                <span class="mini-label">
-                                    CGPA
+                                <span class="typing-text">
+                                    build something impactful_
                                 </span>
-
-                                <strong class="accent-text">
-                                    7.91 / 10
-                                </strong>
-
-                            </div>
+                            </p>
 
                         </div>
 
                     </div>
 
+
+                    <div class="floating-card floating-card-one">
+                        <span class="float-number">50+</span>
+                        <span class="float-label">
+                            Financial KPIs
+                        </span>
+                    </div>
+
+
+                    <div class="floating-card floating-card-two">
+                        <span class="float-number">1848</span>
+                        <span class="float-label">
+                            LeetCode Rating
+                        </span>
+                    </div>
+
                 </div>
 
             </div>
+
+
+            <a
+                href="#about"
+                class="scroll-indicator"
+                aria-label="Scroll to about section"
+            >
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </a>
 
         </section>
 
 
 
-        <!-- =====================================================
-             EXPERIENCE
-        ====================================================== -->
+        <!-- ==================================================
+             ABOUT
+        =================================================== -->
 
-        <section class="section section-soft" id="experience">
+        <section class="section about-section" id="about">
 
-            <div class="section-inner">
+            <div class="container">
 
-                <div class="section-label">
-                    <span>02</span>
-                    EXPERIENCE
-                </div>
+                <div class="section-heading reveal">
 
+                    <span class="section-number">
+                        01
+                    </span>
 
-                <div class="experience-heading">
-
-                    <h2>
-                        Where I've worked
-                    </h2>
-
-                    <p>
-                        Building systems, analyzing data and
-                        learning how software works in real products.
+                    <p class="section-label">
+                        About Me
                     </p>
 
+                    <h2>
+                        A little bit
+                        <span>about me.</span>
+                    </h2>
+
                 </div>
 
 
-                <div class="experience-list">
+                <div class="about-grid">
+
+                    <div class="about-text reveal">
+
+                        <p class="about-highlight">
+                            I'm an engineering student who enjoys turning
+                            complex ideas into useful, scalable products.
+                        </p>
 
 
-                    <!-- Experience 1 -->
+                        <p>
+                            I'm currently pursuing a Bachelor of Technology
+                            at the Indian Institute of Technology Ropar.
+                            My interests sit at the intersection of
+                            <strong>software engineering</strong>,
+                            <strong>artificial intelligence</strong>,
+                            <strong>data analytics</strong>, and
+                            <strong>problem solving</strong>.
+                        </p>
 
-                    <article class="experience-item">
 
-                        <div class="experience-period">
+                        <p>
+                            Through internships and personal projects, I've
+                            worked on financial intelligence platforms,
+                            backend systems, AI agents, RAG pipelines,
+                            analytics workflows, authentication systems,
+                            cloud storage, and interactive applications.
+                        </p>
 
-                            <span>
-                                JUN 2026
+
+                        <p>
+                            Outside development, I enjoy competitive
+                            programming and continuously work on improving my
+                            understanding of computer science fundamentals,
+                            algorithms, and system design.
+                        </p>
+
+                    </div>
+
+
+                    <div class="about-details reveal">
+
+                        <div class="detail-card">
+
+                            <span class="detail-number">
+                                01
                             </span>
 
-                            <span>
-                                —
-                            </span>
+                            <div>
+                                <p class="detail-label">
+                                    Education
+                                </p>
 
-                            <span>
-                                AUG 2026
-                            </span>
+                                <h3>
+                                    IIT Ropar
+                                </h3>
+
+                                <p>
+                                    B.Tech • 2023 – 2027
+                                </p>
+                            </div>
 
                         </div>
 
 
-                        <div class="experience-content">
+                        <div class="detail-card">
+
+                            <span class="detail-number">
+                                02
+                            </span>
+
+                            <div>
+                                <p class="detail-label">
+                                    Current Focus
+                                </p>
+
+                                <h3>
+                                    Agentic AI
+                                </h3>
+
+                                <p>
+                                    AI Agents • RAG • LLM Systems
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="detail-card">
+
+                            <span class="detail-number">
+                                03
+                            </span>
+
+                            <div>
+                                <p class="detail-label">
+                                    Interests
+                                </p>
+
+                                <h3>
+                                    Engineering
+                                </h3>
+
+                                <p>
+                                    Backend • Data • AI • Algorithms
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             EXPERIENCE
+        =================================================== -->
+
+        <section
+            class="section experience-section"
+            id="experience"
+        >
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-number">
+                        02
+                    </span>
+
+                    <p class="section-label">
+                        Experience
+                    </p>
+
+                    <h2>
+                        Places where I've
+                        <span>built & learned.</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="timeline">
+
+
+                    <!-- EXPERIENCE 1 -->
+
+                    <article class="timeline-item reveal">
+
+                        <div class="timeline-marker"></div>
+
+
+                        <div class="experience-card">
 
                             <div class="experience-top">
 
                                 <div>
+                                    <p class="experience-company">
+                                        Bluestock Fintech
+                                    </p>
 
                                     <h3>
                                         Data Analyst Intern
                                     </h3>
-
-                                    <p class="company">
-                                        Bluestock Fintech
-                                    </p>
-
                                 </div>
 
-                                <span class="location">
-                                    Remote
+
+                                <span class="experience-date">
+                                    Jun 2026 — Aug 2026
                                 </span>
 
                             </div>
 
 
-                            <p class="experience-summary">
-
-                                Worked on financial intelligence,
-                                analytics and investment-screening
-                                systems using Python and data
-                                engineering workflows.
-
-                            </p>
-
-
-                            <ul>
-
-                                <li>
-                                    Built a financial intelligence
-                                    platform covering
-                                    <strong>92 NIFTY 100 companies</strong>
-                                    across 14 years of data.
-                                </li>
-
-                                <li>
-                                    Engineered
-                                    <strong>50+ financial KPIs</strong>
-                                    with validation, edge-case handling
-                                    and trend analysis.
-                                </li>
-
-                                <li>
-                                    Developed
-                                    <strong>6 investment screeners</strong>
-                                    using composite scoring, valuation
-                                    analysis and ranked shortlists.
-                                </li>
-
-                                <li>
-                                    Built peer, sector, cash-flow and
-                                    clustering analytics with automated
-                                    reports and insights.
-                                </li>
-
-                            </ul>
-
-
-                            <div class="tech-list">
+                            <div class="tech-row">
 
                                 <span>Python</span>
                                 <span>Pandas</span>
@@ -517,90 +613,71 @@
 
                             </div>
 
+
+                            <ul class="experience-points">
+
+                                <li>
+                                    Built a financial intelligence platform
+                                    covering 92 NIFTY 100 companies across
+                                    14 years of financial data.
+                                </li>
+
+                                <li>
+                                    Engineered 50+ financial KPIs with
+                                    automated validation and edge-case
+                                    handling.
+                                </li>
+
+                                <li>
+                                    Developed six investment screeners with
+                                    valuation analysis, scoring, and ranked
+                                    shortlists.
+                                </li>
+
+                                <li>
+                                    Built peer, sector, cash-flow, and
+                                    clustering analytics with automated
+                                    insights.
+                                </li>
+
+                            </ul>
+
                         </div>
 
                     </article>
 
 
 
-                    <!-- Experience 2 -->
+                    <!-- EXPERIENCE 2 -->
 
-                    <article class="experience-item">
+                    <article class="timeline-item reveal">
 
-                        <div class="experience-period">
-
-                            <span>
-                                JUN 2025
-                            </span>
-
-                            <span>
-                                —
-                            </span>
-
-                            <span>
-                                JUL 2025
-                            </span>
-
-                        </div>
+                        <div class="timeline-marker"></div>
 
 
-                        <div class="experience-content">
+                        <div class="experience-card">
 
                             <div class="experience-top">
 
                                 <div>
+                                    <p class="experience-company">
+                                        Bluestock Fintech
+                                    </p>
 
                                     <h3>
                                         Software Developer Intern
                                     </h3>
-
-                                    <p class="company">
-                                        Bluestock Fintech
-                                    </p>
-
                                 </div>
 
-                                <span class="location">
-                                    Remote
+
+                                <span class="experience-date">
+                                    Jun 2025 — Jul 2025
                                 </span>
 
                             </div>
 
 
-                            <p class="experience-summary">
-
-                                Developed backend functionality for
-                                an IPO management platform with
-                                authentication and cloud document
-                                workflows.
-
-                            </p>
-
-
-                            <ul>
-
-                                <li>
-                                    Built an IPO management platform
-                                    for creating, updating, tracking
-                                    and managing IPO records.
-                                </li>
-
-                                <li>
-                                    Implemented secure admin access
-                                    using JWT authentication, OTP
-                                    verification and password recovery.
-                                </li>
-
-                                <li>
-                                    Developed cloud-based document
-                                    workflows for secure file storage,
-                                    retrieval and management.
-                                </li>
-
-                            </ul>
-
-
-                            <div class="tech-list">
+                            <div class="tech-row">
 
                                 <span>Node.js</span>
                                 <span>Express.js</span>
@@ -609,6 +686,28 @@
 
                             </div>
 
+
+                            <ul class="experience-points">
+
+                                <li>
+                                    Built an IPO management platform for
+                                    creating, updating, tracking, and
+                                    managing IPO records.
+                                </li>
+
+                                <li>
+                                    Implemented secure admin authentication
+                                    using JWT, OTP verification, and password
+                                    recovery workflows.
+                                </li>
+
+                                <li>
+                                    Developed cloud-based document workflows
+                                    for secure file storage and retrieval.
+                                </li>
+
+                            </ul>
+
                         </div>
 
                     </article>
@@ -621,329 +720,241 @@
 
 
 
-        <!-- =====================================================
+        <!-- ==================================================
              PROJECTS
-        ====================================================== -->
+        =================================================== -->
 
-        <section class="section" id="projects">
+        <section class="section projects-section" id="projects">
 
-            <div class="section-inner">
+            <div class="container">
 
-                <div class="section-label">
-                    <span>03</span>
-                    SELECTED WORK
-                </div>
+                <div class="section-heading reveal">
 
+                    <span class="section-number">
+                        03
+                    </span>
 
-                <div class="projects-intro">
-
-                    <div>
-
-                        <h2>
-                            Things I've built
-                        </h2>
-
-                    </div>
-
-                    <p>
-                        Projects where I explored AI, backend
-                        engineering and building software around
-                        real problems.
+                    <p class="section-label">
+                        Selected Work
                     </p>
 
+                    <h2>
+                        Things I've
+                        <span>built.</span>
+                    </h2>
+
                 </div>
 
 
-                <div class="projects">
+
+                <div class="projects-grid">
 
 
-                    <!-- Project 1 -->
+                    <!-- PROJECT 1 -->
 
-                    <article class="project project-featured">
+                    <article class="project-card reveal">
 
                         <div class="project-number">
                             01
                         </div>
 
 
-                        <div class="project-body">
+                        <div class="project-header">
 
-                            <div class="project-meta">
-
-                                <span>
-                                    AGENTIC AI
-                                </span>
-
-                                <span>
-                                    JUL 2026 — PRESENT
-                                </span>
-
+                            <div class="folder-icon">
+                                ◇
                             </div>
 
+
+                            <a
+                                href="https://github.com/vinit9021/career-intelligence-platform"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-external"
+                                aria-label="Career Intelligence Platform GitHub"
+                            >
+                                ↗
+                            </a>
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <p class="project-category">
+                                Agentic AI Platform
+                            </p>
 
                             <h3>
                                 Career Intelligence Platform
                             </h3>
 
 
-                            <p class="project-lead">
-
-                                An agentic platform designed to help
-                                candidates understand opportunities,
-                                improve applications and prepare for
-                                company-specific assessments.
-
+                            <p>
+                                An agentic career platform that analyzes job
+                                descriptions, evaluates role fit, tailors
+                                resumes and cover letters, prepares targeted
+                                online-assessment practice, and intelligently
+                                tracks applications.
                             </p>
 
-
-                            <div class="project-capabilities">
-
-                                <div>
-
-                                    <span>01</span>
-
-                                    <div>
-                                        <strong>
-                                            Role Intelligence
-                                        </strong>
-
-                                        <p>
-                                            Analyzes job descriptions
-                                            and evaluates role-fit.
-                                        </p>
-                                    </div>
-
-                                </div>
+                        </div>
 
 
-                                <div>
+                        <div class="project-tech">
 
-                                    <span>02</span>
-
-                                    <div>
-                                        <strong>
-                                            Application Tailoring
-                                        </strong>
-
-                                        <p>
-                                            Tailors resumes and cover
-                                            letters to specific roles.
-                                        </p>
-                                    </div>
-
-                                </div>
-
-
-                                <div>
-
-                                    <span>03</span>
-
-                                    <div>
-                                        <strong>
-                                            OA Preparation
-                                        </strong>
-
-                                        <p>
-                                            Generates targeted DSA,
-                                            SQL and system-design
-                                            practice.
-                                        </p>
-                                    </div>
-
-                                </div>
-
-
-                                <div>
-
-                                    <span>04</span>
-
-                                    <div>
-                                        <strong>
-                                            Application Tracking
-                                        </strong>
-
-                                        <p>
-                                            Syncs recruiter emails
-                                            with application updates.
-                                        </p>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="project-footer">
-
-                                <div class="tech-list">
-
-                                    <span>Python</span>
-                                    <span>LangGraph</span>
-                                    <span>FastAPI</span>
-                                    <span>PostgreSQL</span>
-
-                                </div>
-
-
-                                <a
-                                    href="https://github.com/vinit9021"
-                                    target="_blank"
-                                    rel="noopener noreferrer">
-
-                                    View on GitHub ↗
-
-                                </a>
-
-                            </div>
+                            <span>Python</span>
+                            <span>LangGraph</span>
+                            <span>FastAPI</span>
+                            <span>PostgreSQL</span>
 
                         </div>
+
+
+                        <a
+                            href="https://github.com/vinit9021/career-intelligence-platform"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link"
+                        >
+                            View Project
+                            <span>→</span>
+                        </a>
 
                     </article>
 
 
 
-                    <!-- Project 2 -->
+                    <!-- PROJECT 2 -->
 
-                    <article class="project">
+                    <article class="project-card reveal">
 
                         <div class="project-number">
                             02
                         </div>
 
 
-                        <div class="project-body">
+                        <div class="project-header">
 
-                            <div class="project-meta">
-
-                                <span>
-                                    AI · EDUCATION
-                                </span>
-
-                                <span>
-                                    APR 2026 — PRESENT
-                                </span>
-
+                            <div class="folder-icon">
+                                ◇
                             </div>
 
+
+                            <a
+                                href="https://github.com/vinit9021/ai-academic-copilot"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="project-external"
+                                aria-label="AI Academic Co-Pilot GitHub"
+                            >
+                                ↗
+                            </a>
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <p class="project-category">
+                                AI / RAG
+                            </p>
 
                             <h3>
                                 AI Academic Co-Pilot
                             </h3>
 
 
-                            <p class="project-lead">
-
-                                An AI-powered academic co-pilot for
-                                personalized learning, research
-                                assistance and exam preparation.
-
+                            <p>
+                                An AI-powered academic assistant for
+                                personalized learning, research assistance,
+                                exam preparation, concept explanations,
+                                quizzes, coding practice, and adaptive
+                                learning recommendations.
                             </p>
 
-
-                            <div class="project-capabilities">
-
-                                <div>
-
-                                    <span>01</span>
-
-                                    <div>
-                                        <strong>
-                                            Adaptive Learning
-                                        </strong>
-
-                                        <p>
-                                            Personalized workflows
-                                            for different learning
-                                            needs.
-                                        </p>
-                                    </div>
-
-                                </div>
+                        </div>
 
 
-                                <div>
+                        <div class="project-tech">
 
-                                    <span>02</span>
+                            <span>Python</span>
+                            <span>LangChain</span>
+                            <span>Groq</span>
+                            <span>RAG</span>
+                            <span>FAISS</span>
 
-                                    <div>
-                                        <strong>
-                                            Academic Assistance
-                                        </strong>
-
-                                        <p>
-                                            Concept explanation,
-                                            assignment guidance and
-                                            research support.
-                                        </p>
-                                    </div>
-
-                                </div>
+                        </div>
 
 
-                                <div>
+                        <a
+                            href="https://github.com/vinit9021/ai-academic-copilot"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link"
+                        >
+                            View Project
+                            <span>→</span>
+                        </a>
 
-                                    <span>03</span>
-
-                                    <div>
-                                        <strong>
-                                            Practice
-                                        </strong>
-
-                                        <p>
-                                            Quizzes and coding
-                                            practice for exam
-                                            preparation.
-                                        </p>
-                                    </div>
-
-                                </div>
+                    </article>
 
 
-                                <div>
 
-                                    <span>04</span>
+                    <!-- PROJECT 3 -->
 
-                                    <div>
-                                        <strong>
-                                            Learning Analytics
-                                        </strong>
+                    <article class="project-card project-card-featured reveal">
 
-                                        <p>
-                                            Tracks knowledge gaps and
-                                            recommends improvements.
-                                        </p>
-                                    </div>
-
-                                </div>
-
-                            </div>
+                        <div class="project-number">
+                            03
+                        </div>
 
 
-                            <div class="project-footer">
+                        <div class="project-header">
 
-                                <div class="tech-list">
-
-                                    <span>Python</span>
-                                    <span>LangChain</span>
-                                    <span>Groq LLM</span>
-                                    <span>RAG</span>
-                                    <span>FAISS</span>
-
-                                </div>
-
-
-                                <a
-                                    href="https://github.com/vinit9021"
-                                    target="_blank"
-                                    rel="noopener noreferrer">
-
-                                    View on GitHub ↗
-
-                                </a>
-
+                            <div class="folder-icon">
+                                ◇
                             </div>
 
                         </div>
+
+
+                        <div class="project-content">
+
+                            <p class="project-category">
+                                Financial Analytics
+                            </p>
+
+                            <h3>
+                                NIFTY 100 Financial Intelligence
+                            </h3>
+
+
+                            <p>
+                                A financial analytics system covering
+                                92 NIFTY 100 companies and 14 years of
+                                data, with 50+ financial KPIs, investment
+                                screeners, validation pipelines, peer
+                                analytics, sector intelligence, and
+                                automated insights.
+                            </p>
+
+                        </div>
+
+
+                        <div class="project-tech">
+
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>Streamlit</span>
+                            <span>FastAPI</span>
+
+                        </div>
+
+
+                        <span class="project-link project-link-muted">
+                            Internship Project
+                        </span>
 
                     </article>
 
@@ -955,148 +966,146 @@
 
 
 
-        <!-- =====================================================
+        <!-- ==================================================
              SKILLS
-        ====================================================== -->
+        =================================================== -->
 
-        <section class="section section-soft" id="skills">
+        <section class="section skills-section" id="skills">
 
-            <div class="section-inner">
+            <div class="container">
 
-                <div class="section-label">
-                    <span>04</span>
-                    TOOLKIT
-                </div>
+                <div class="section-heading reveal">
 
+                    <span class="section-number">
+                        04
+                    </span>
 
-                <div class="skills-heading">
-
-                    <h2>
-                        Tools I use to build
-                    </h2>
-
-                    <p>
-                        A practical mix of programming, backend,
-                        AI and infrastructure technologies.
+                    <p class="section-label">
+                        Skills
                     </p>
 
+                    <h2>
+                        Tools I use to
+                        <span>build.</span>
+                    </h2>
+
                 </div>
 
 
-                <div class="skills">
+                <div class="skills-grid">
 
 
-                    <div class="skill-row">
+                    <div class="skill-card reveal">
 
-                        <div class="skill-category">
-                            01
-                            <strong>
-                                Programming
-                            </strong>
+                        <div class="skill-card-top">
+                            <span>01</span>
+                            <h3>Languages</h3>
                         </div>
 
-                        <div class="skill-items">
-
+                        <div class="skill-tags">
                             <span>C++</span>
                             <span>Python</span>
                             <span>JavaScript</span>
                             <span>SQL</span>
                             <span>HTML</span>
                             <span>CSS</span>
-
                         </div>
 
                     </div>
 
 
-                    <div class="skill-row">
 
-                        <div class="skill-category">
-                            02
-                            <strong>
-                                AI & LLM
-                            </strong>
+                    <div class="skill-card reveal">
+
+                        <div class="skill-card-top">
+                            <span>02</span>
+                            <h3>Agentic AI</h3>
                         </div>
 
-                        <div class="skill-items">
-
+                        <div class="skill-tags">
                             <span>AI Agents</span>
-                            <span>Agentic AI</span>
                             <span>LLMs</span>
                             <span>LangChain</span>
                             <span>LangGraph</span>
                             <span>RAG</span>
                             <span>FAISS</span>
-
                         </div>
 
                     </div>
 
 
-                    <div class="skill-row">
 
-                        <div class="skill-category">
-                            03
-                            <strong>
-                                Backend
-                            </strong>
+                    <div class="skill-card reveal">
+
+                        <div class="skill-card-top">
+                            <span>03</span>
+                            <h3>Backend</h3>
                         </div>
 
-                        <div class="skill-items">
-
+                        <div class="skill-tags">
                             <span>Node.js</span>
                             <span>Express.js</span>
+                            <span>FastAPI</span>
                             <span>Django</span>
                             <span>Flask</span>
                             <span>REST APIs</span>
-
                         </div>
 
                     </div>
 
 
-                    <div class="skill-row">
 
-                        <div class="skill-category">
-                            04
-                            <strong>
-                                Data & Cloud
-                            </strong>
+                    <div class="skill-card reveal">
+
+                        <div class="skill-card-top">
+                            <span>04</span>
+                            <h3>Data & Cloud</h3>
                         </div>
 
-                        <div class="skill-items">
-
+                        <div class="skill-tags">
                             <span>PostgreSQL</span>
                             <span>MongoDB</span>
                             <span>SQLite</span>
                             <span>AWS S3</span>
                             <span>Pandas</span>
-
+                            <span>Streamlit</span>
                         </div>
 
                     </div>
 
 
-                    <div class="skill-row">
 
-                        <div class="skill-category">
-                            05
-                            <strong>
-                                Engineering
-                            </strong>
+                    <div class="skill-card reveal">
+
+                        <div class="skill-card-top">
+                            <span>05</span>
+                            <h3>Developer Tools</h3>
                         </div>
 
-                        <div class="skill-items">
-
-                            <span>DSA</span>
-                            <span>Operating Systems</span>
-                            <span>OOP</span>
-                            <span>Computer Networks</span>
-                            <span>DBMS</span>
+                        <div class="skill-tags">
                             <span>Git</span>
                             <span>GitHub</span>
                             <span>Postman</span>
+                            <span>VS Code</span>
+                        </div>
 
+                    </div>
+
+
+
+                    <div class="skill-card reveal">
+
+                        <div class="skill-card-top">
+                            <span>06</span>
+                            <h3>CS Fundamentals</h3>
+                        </div>
+
+                        <div class="skill-tags">
+                            <span>DSA</span>
+                            <span>Operating Systems</span>
+                            <span>OOP</span>
+                            <span>DBMS</span>
+                            <span>Computer Networks</span>
                         </div>
 
                     </div>
@@ -1109,206 +1118,198 @@
 
 
 
-        <!-- =====================================================
+        <!-- ==================================================
              ACHIEVEMENTS
-        ====================================================== -->
+        =================================================== -->
 
-        <section class="section" id="achievements">
+        <section
+            class="section achievements-section"
+            id="achievements"
+        >
 
-            <div class="section-inner">
+            <div class="container">
 
-                <div class="section-label">
-                    <span>05</span>
-                    PROOF OF WORK
+                <div class="section-heading reveal">
+
+                    <span class="section-number">
+                        05
+                    </span>
+
+                    <p class="section-label">
+                        Achievements
+                    </p>
+
+                    <h2>
+                        A few
+                        <span>milestones.</span>
+                    </h2>
+
                 </div>
 
 
-                <div class="achievements-layout">
+                <div class="achievement-grid">
 
-                    <div class="achievements-heading">
 
-                        <h2>
-                            Beyond the projects
-                        </h2>
+                    <div class="achievement-card reveal">
+
+                        <span class="achievement-index">
+                            01
+                        </span>
+
+                        <div class="achievement-icon">
+                            F
+                        </div>
+
+                        <h3>
+                            Flipkart GRiD 8.0
+                        </h3>
 
                         <p>
-                            Competitive programming, selections
-                            and experiences that reflect how I
-                            approach difficult problems.
+                            Selected as a National Semi-Finalist in the
+                            AI Engineering Track.
                         </p>
 
                     </div>
 
 
-                    <div class="achievements-content">
 
+                    <div class="achievement-card reveal">
 
-                        <!-- Coding -->
+                        <span class="achievement-index">
+                            02
+                        </span>
 
-                        <div class="coding-profiles">
-
-                            <a
-                                href="https://leetcode.com/vinit_iitrpr"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="profile-row">
-
-                                <div>
-
-                                    <span>
-                                        LEETCODE
-                                    </span>
-
-                                    <strong>
-                                        1848
-                                    </strong>
-
-                                </div>
-
-                                <span class="profile-arrow">
-                                    ↗
-                                </span>
-
-                            </a>
-
-
-                            <a
-                                href="https://codeforces.com/profile/vinit_iitrpr"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="profile-row">
-
-                                <div>
-
-                                    <span>
-                                        CODEFORCES
-                                    </span>
-
-                                    <strong>
-                                        Specialist · 1496
-                                    </strong>
-
-                                </div>
-
-                                <span class="profile-arrow">
-                                    ↗
-                                </span>
-
-                            </a>
-
-
-                            <a
-                                href="https://www.codechef.com/users/vinit_iitrpr"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="profile-row">
-
-                                <div>
-
-                                    <span>
-                                        CODECHEF
-                                    </span>
-
-                                    <strong>
-                                        3-Star · 1720
-                                    </strong>
-
-                                </div>
-
-                                <span class="profile-arrow">
-                                    ↗
-                                </span>
-
-                            </a>
-
+                        <div class="achievement-icon">
+                            A
                         </div>
 
+                        <h3>
+                            Amazon ML Summer School
+                        </h3>
 
-                        <!-- Other achievements -->
+                        <p>
+                            Selected among 3,000 participants from
+                            130,000+ applicants.
+                        </p>
 
-                        <div class="achievement-list">
-
-                            <div class="achievement-row">
-
-                                <span>01</span>
-
-                                <div>
-
-                                    <strong>
-                                        Flipkart GRiD 8.0
-                                    </strong>
-
-                                    <p>
-                                        National Semi-Finalist —
-                                        AI Engineering Track.
-                                    </p>
-
-                                </div>
-
-                            </div>
+                    </div>
 
 
-                            <div class="achievement-row">
 
-                                <span>02</span>
+                    <a
+                        href="https://leetcode.com/vinit_iitrpr"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="achievement-card reveal"
+                    >
 
-                                <div>
+                        <span class="achievement-index">
+                            03
+                        </span>
 
-                                    <strong>
-                                        Amazon ML Summer School 2026
-                                    </strong>
-
-                                    <p>
-                                        Selected among 3,000
-                                        participants from 130,000+
-                                        applicants.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="achievement-row">
-
-                                <span>03</span>
-
-                                <div>
-
-                                    <strong>
-                                        ATF Stage 2
-                                    </strong>
-
-                                    <p>
-                                        Ranked among the top 5%
-                                        of 20,000+ applicants.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="achievement-row">
-
-                                <span>04</span>
-
-                                <div>
-
-                                    <strong>
-                                        National Science Olympiad
-                                    </strong>
-
-                                    <p>
-                                        Secured a Gold Medal at
-                                        the school level.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
+                        <div class="achievement-icon">
+                            LC
                         </div>
+
+                        <h3>
+                            LeetCode
+                        </h3>
+
+                        <p>
+                            Maximum rating
+                            <strong>1848</strong>.
+                        </p>
+
+                        <span class="achievement-arrow">
+                            ↗
+                        </span>
+
+                    </a>
+
+
+
+                    <a
+                        href="https://codeforces.com/profile/vinit_iitrpr"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="achievement-card reveal"
+                    >
+
+                        <span class="achievement-index">
+                            04
+                        </span>
+
+                        <div class="achievement-icon">
+                            CF
+                        </div>
+
+                        <h3>
+                            Codeforces
+                        </h3>
+
+                        <p>
+                            Specialist with maximum rating
+                            <strong>1496</strong>.
+                        </p>
+
+                        <span class="achievement-arrow">
+                            ↗
+                        </span>
+
+                    </a>
+
+
+
+                    <a
+                        href="https://www.codechef.com/users/vinit_iitrpr"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="achievement-card reveal"
+                    >
+
+                        <span class="achievement-index">
+                            05
+                        </span>
+
+                        <div class="achievement-icon">
+                            CC
+                        </div>
+
+                        <h3>
+                            CodeChef
+                        </h3>
+
+                        <p>
+                            3-Star rated with maximum rating
+                            <strong>1720</strong>.
+                        </p>
+
+                        <span class="achievement-arrow">
+                            ↗
+                        </span>
+
+                    </a>
+
+
+
+                    <div class="achievement-card reveal">
+
+                        <span class="achievement-index">
+                            06
+                        </span>
+
+                        <div class="achievement-icon">
+                            %
+                        </div>
+
+                        <h3>
+                            ATF Stage 2
+                        </h3>
+
+                        <p>
+                            Ranked among the top 5% of a pool exceeding
+                            20,000 applicants.
+                        </p>
 
                     </div>
 
@@ -1320,207 +1321,153 @@
 
 
 
-        <!-- =====================================================
-             BEYOND CODE
-        ====================================================== -->
-
-        <section class="section section-soft">
-
-            <div class="section-inner">
-
-                <div class="section-label">
-                    <span>06</span>
-                    BEYOND CODE
-                </div>
-
-
-                <div class="beyond-layout">
-
-                    <div>
-
-                        <h2>
-                            Things I care about
-                            <span>outside the editor.</span>
-                        </h2>
-
-                    </div>
-
-
-                    <div class="roles">
-
-                        <div class="role">
-
-                            <span>
-                                2026 — PRESENT
-                            </span>
-
-                            <div>
-
-                                <strong>
-                                    Assistant Placement Coordinator
-                                </strong>
-
-                                <p>
-                                    Career Development and
-                                    Placement Cell · IIT Ropar
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="role">
-
-                            <span>
-                                2024 — 2025
-                            </span>
-
-                            <div>
-
-                                <strong>
-                                    UG Mentor
-                                </strong>
-
-                                <p>
-                                    Institute Student Mentorship
-                                    Program · IIT Ropar
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="role">
-
-                            <span>
-                                2024 — 2025
-                            </span>
-
-                            <div>
-
-                                <strong>
-                                    Advisor
-                                </strong>
-
-                                <p>
-                                    Dance Club · IIT Ropar
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
+        <!-- ==================================================
              CONTACT
-        ====================================================== -->
+        =================================================== -->
 
-        <section class="section contact" id="contact">
+        <section class="section contact-section" id="contact">
 
-            <div class="section-inner">
+            <div class="container">
 
-                <div class="contact-layout">
-
-
-                    <div class="contact-copy">
-
-                        <div class="section-label">
-                            <span>07</span>
-                            CONTACT
-                        </div>
+                <div class="contact-wrapper reveal">
 
 
-                        <h2>
-                            Have something
-                            <span>interesting in mind?</span>
-                        </h2>
+                    <div class="contact-info">
 
+                        <span class="section-number">
+                            06
+                        </span>
 
-                        <p>
-                            Whether it's a software opportunity,
-                            a project idea or simply a conversation
-                            about technology, I'd be happy to hear
-                            from you.
+                        <p class="section-label">
+                            Contact
                         </p>
 
 
-                        <a
-                            href="mailto:vinitgujrathi87@gmail.com"
-                            class="email">
+                        <h2>
+                            Have an idea?
+                            <span>
+                                Let's talk.
+                            </span>
+                        </h2>
 
-                            vinitgujrathi87@gmail.com
-                            <span>↗</span>
 
-                        </a>
+                        <p class="contact-description">
+                            Whether you want to discuss an opportunity,
+                            collaborate on a project, talk about technology,
+                            or simply say hello, feel free to send me a
+                            message.
+                        </p>
+
+
+                        <div class="contact-status">
+                            <span class="status-dot"></span>
+
+                            <span>
+                                Open to internships, opportunities and
+                                interesting conversations.
+                            </span>
+                        </div>
 
                     </div>
 
 
+
+                    <!--
+                        GitHub Pages cannot process forms by itself.
+
+                        This form uses FormSubmit to forward messages
+                        to your email.
+                    -->
 
                     <form
-                        id="contactForm"
-                        class="contact-form">
+                        class="contact-form"
+                        action="https://formsubmit.co/vinitgujrathi87@gmail.com"
+                        method="POST"
+                    >
 
                         <input
                             type="hidden"
                             name="_subject"
-                            value="Portfolio Contact — Vinit Gujrathi">
-
-                        <input
-                            type="hidden"
-                            name="_template"
-                            value="table">
+                            value="New Portfolio Message"
+                        >
 
                         <input
                             type="hidden"
                             name="_captcha"
-                            value="true">
+                            value="false"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="_template"
+                            value="table"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="_next"
+                            value="https://vinit9021.github.io/#contact"
+                        >
 
 
-                        <div class="field">
+                        <div class="form-row">
 
-                            <label for="name">
-                                Name
+                            <div class="form-group">
+
+                                <label for="name">
+                                    Your Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="John Doe"
+                                    autocomplete="name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="email">
+                                    Email Address
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="john@example.com"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="subject">
+                                Subject
                             </label>
 
                             <input
-                                id="name"
-                                name="name"
                                 type="text"
-                                placeholder="Your name"
-                                required>
+                                id="subject"
+                                name="subject"
+                                placeholder="Let's work together"
+                                required
+                            >
 
                         </div>
 
 
-                        <div class="field">
-
-                            <label for="email">
-                                Email
-                            </label>
-
-                            <input
-                                id="email"
-                                name="email"
-                                type="email"
-                                placeholder="you@example.com"
-                                required>
-
-                        </div>
-
-
-                        <div class="field">
+                        <div class="form-group">
 
                             <label for="message">
                                 Message
@@ -1530,27 +1477,23 @@
                                 id="message"
                                 name="message"
                                 rows="6"
-                                placeholder="Tell me a little about it..."
-                                required></textarea>
+                                placeholder="Tell me what's on your mind..."
+                                required
+                            ></textarea>
 
                         </div>
 
 
                         <button
                             type="submit"
-                            class="btn btn-primary submit-button"
-                            id="submitButton">
+                            class="btn btn-primary form-submit"
+                        >
+                            Send Message
 
-                            Send message
-                            <span>↗</span>
-
+                            <span>
+                                →
+                            </span>
                         </button>
-
-
-                        <p
-                            class="form-status"
-                            id="formStatus">
-                        </p>
 
                     </form>
 
@@ -1564,65 +1507,82 @@
 
 
 
-    <!-- =====================================================
+    <!-- ==================================================
          FOOTER
-    ====================================================== -->
+    =================================================== -->
 
     <footer class="footer">
 
-        <div class="footer-inner">
+        <div class="container footer-container">
 
             <div>
 
-                <a href="#home" class="brand">
-                    Vinit<span>.</span>
+                <a href="#home" class="footer-logo">
+                    VG<span>.</span>
                 </a>
 
                 <p>
-                    Software Developer · Backend · Agentic AI
+                    Designed & built by Vinit Gujrathi.
                 </p>
 
             </div>
 
 
-            <div class="footer-links">
+            <div class="footer-socials">
 
-                <a href="#about">
-                    About
-                </a>
-
-                <a href="#projects">
-                    Projects
-                </a>
-
-                <a href="#contact">
-                    Contact
+                <a
+                    href="https://www.linkedin.com/in/vinit-gujrathi-7b4a54285/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn
                 </a>
 
                 <a
                     href="https://github.com/vinit9021"
                     target="_blank"
-                    rel="noopener noreferrer">
-
+                    rel="noopener noreferrer"
+                >
                     GitHub
+                </a>
 
+                <a
+                    href="https://leetcode.com/vinit_iitrpr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LeetCode
+                </a>
+
+                <a
+                    href="https://codeforces.com/profile/vinit_iitrpr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Codeforces
+                </a>
+
+                <a
+                    href="https://www.codechef.com/users/vinit_iitrpr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    CodeChef
                 </a>
 
             </div>
 
 
-            <span class="copyright">
-                © 2026 Vinit Gujrathi
-            </span>
+            <p class="footer-year">
+                © <span id="currentYear"></span>
+            </p>
 
         </div>
 
     </footer>
 
 
-
     <script src="script.js"></script>
 
 </body>
-
 </html>
