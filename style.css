@@ -1214,6 +1214,44 @@ ul {
     gap: 12px;
 }
 
+.profile-photo-card {
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 12px;
+}
+
+
+.profile-photo {
+
+    width: 190px;
+    height: 190px;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 50%;
+
+    border: 3px solid var(--border);
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform var(--transition),
+        border-color var(--transition);
+}
+
+
+.profile-photo:hover {
+
+    transform: scale(1.04);
+
+    border-color: var(--primary);
+}
+
 
 .detail-card {
 
@@ -2890,6 +2928,13 @@ a.achievement-card:hover {
     .experience-card {
         padding: 20px;
     }
+
+    .profile-photo {
+
+       width: 160px;
+       height: 160px;
+       border-radius: 50%;
+   }
 
 }
 
