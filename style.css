@@ -1156,6 +1156,7 @@ ul {
 
 .about-section {
     background: var(--bg-secondary);
+    position: relative;
 }
 
 
@@ -1208,34 +1209,30 @@ ul {
 
 .about-details {
 
-    display: grid;
+    display: flex;
+    flex-direction: column;
 
-    grid-template-columns: 145px 1fr;
-    grid-template-rows: repeat(3, auto);
+    gap: 10px;
 
-    column-gap: 16px;
-    row-gap: 10px;
+    justify-content: flex-start;
 
-    align-items: stretch;
+    padding-top: 40px;
 }
-
 
 .about-photo-wrap {
 
-    grid-column: 1;
-    grid-row: 1 / 4;
+    position: absolute;
+
+    top: 125px;
+    right: 27%;
 
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 
-    margin-top: -105px;
-}
+    margin: 0;
 
-
-.detail-card {
-
-    grid-column: 2;
+    z-index: 3;
 }
 
 .profile-photo {
@@ -2569,6 +2566,17 @@ a.achievement-card:hover {
         gap: 50px;
     }
 
+   .about-photo-wrap {
+
+       position: static;
+   
+       margin-bottom: 10px;
+   }
+
+   .about-details {
+        padding-top: 0;
+    }
+
 }
 
 
@@ -2915,29 +2923,6 @@ a.achievement-card:hover {
     .footer-socials {
         justify-content: center;
     }
-
-    .about-details {
-
-       grid-template-columns: 1fr;
-       grid-template-rows: auto;
-   
-       gap: 10px;
-   }
-
-
-   .about-photo-wrap {
-
-       grid-column: 1;
-       grid-row: auto;
-   
-       margin-bottom: 10px;
-   }
-
-
-  .detail-card {
-
-      grid-column: 1;
-   }
 
 }
 
