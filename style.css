@@ -1209,36 +1209,41 @@ ul {
 
 .about-details {
 
-    display: flex;
-    flex-direction: column;
+    display: grid;
 
-    gap: 10px;
+    grid-template-columns: 190px 1fr;
 
-    justify-content: flex-start;
+    gap: 18px;
 
-    padding-top: 40px;
+    align-items: center;
+
+    padding-top: 0;
 }
 
+
 .about-photo-wrap {
-
-    position: absolute;
-
-    top: 125px;
-    right: 27%;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
     margin: 0;
-
-    z-index: 3;
 }
+
+
+.about-cards {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
 
 .profile-photo {
 
-    width: 135px;
-    height: 135px;
+    width: 170px;
+    height: 170px;
 
     object-fit: cover;
     object-position: center;
@@ -1260,7 +1265,6 @@ ul {
         box-shadow 0.4s ease,
         border-color 0.4s ease;
 }
-
 
 .profile-photo:hover {
 
@@ -2923,6 +2927,25 @@ a.achievement-card:hover {
     .footer-socials {
         justify-content: center;
     }
+
+    .about-details {
+
+       grid-template-columns: 1fr;
+   
+       gap: 18px;
+   }
+   
+   
+   .about-photo-wrap {
+   
+       justify-content: center;
+   }
+   
+   
+   .about-cards {
+   
+       width: 100%;
+   }
 
 }
 
